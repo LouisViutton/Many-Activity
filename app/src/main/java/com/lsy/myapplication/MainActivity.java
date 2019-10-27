@@ -1,5 +1,6 @@
 package com.lsy.myapplication;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
@@ -28,7 +29,13 @@ public class MainActivity extends AppCompatActivity {
 
     @OnClick(R.id.bt)
     void jump(){
-        SharedPreferences my_sp = getSharedPreferences("my_sp",MODE_PRIVATE);
+        String input1=editText1.getText().toString();
+        String input2=editText2.getText().toString();
+
+        SpTools.putString("input1_key",input1);
+        SpTools.putString("input2_key",input2);
+
+        /*SharedPreferences my_sp = getSharedPreferences("my_sp",MODE_PRIVATE);
         SharedPreferences.Editor edit=my_sp.edit();
 
         String input1=editText1.getText().toString();
@@ -36,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         edit.putString("input1_key",input1);
         edit.putString("input2_key",input2);
 
-        edit.apply();
+        edit.apply();*/
 
         Intent intent=new Intent(MainActivity.this,MyActivity.class);
         startActivity(intent);

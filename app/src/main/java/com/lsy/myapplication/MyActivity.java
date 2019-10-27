@@ -19,9 +19,12 @@ public class MyActivity extends AppCompatActivity {
 
         ButterKnife.bind(this);
 
-        SharedPreferences my_sp=getSharedPreferences("my_sp",MODE_PRIVATE);
+        /*SharedPreferences my_sp=getSharedPreferences("my_sp",MODE_PRIVATE);
         String input1=my_sp.getString("input1_key","");
-        String input2=my_sp.getString("input2_key","");
+        String input2=my_sp.getString("input2_key","");*/
+
+        String input1 = SpTools.getString("input1_key",  "");
+        String input2 = SpTools.getString("input2_key",  "");
 
         textView.setText(input1+input2);
 
